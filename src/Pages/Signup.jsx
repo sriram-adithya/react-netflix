@@ -1,5 +1,7 @@
 import React from "react";
 
+import { Link } from "react-router-dom";
+
 const Signup = () => {
   return (
     <>
@@ -27,11 +29,22 @@ const Signup = () => {
                 placeholder="Password" 
                 autoComplete="current-password" 
                 />
-
-                <button className="bg-red-600 py-3 my-6 rounded font-nsans-bold">
+                  {/* this is for signup button */}
+                <button className="bg-red-600 py-3 my-6 rounded font-nsans-bold">  
                   Sign Up
                 </button>
 
+                <div className="flex justify-between items-center text-gray-600">
+                  <p>
+                    <input type="checkbox" className="mr-2"/>
+                    Remember me
+                  </p> 
+                  <p>Need Help?</p>
+                </div>
+                <p className="my-4">
+                  <span className="text-gray-600 mr-2">Already subscribed to Netflix?</span>
+                  <Link to="/login" >Sign In</Link>
+                </p>
               </form>
             </div>
           </div>
