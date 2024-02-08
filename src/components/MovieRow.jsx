@@ -12,7 +12,7 @@ const MovieRow = ({ title, url }) => {
     axios.get(url).then((response) => setMovie(response.data.results));
   }, [url]);
 
-  console.log(movies);
+  
   return (
     <>
     <h2 className="font-nsans-bold md:text-xl p-4 capitalize">{title}</h2>

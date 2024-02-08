@@ -26,7 +26,7 @@ function signup (email, password){
 }
 
 
-function logIn(){
+function logIn(email,password){
     return signInWithEmailAndPassword(auth,email,password)
 }
 

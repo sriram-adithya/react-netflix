@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { userAuth } from "../context/AuthContext";
 
 const Login = () => {
 
@@ -7,10 +8,19 @@ const Login = () => {
   const[email,setEmail] = useState('');
   const[password,setPassword] = useState('');
 
-  const handleSubmit = (e)=>{
+  const { user, logIn} = userAuth();
+  const navigate = useNavigate();
+
+
+
+  const handleSubmit = async (e)=>{
     e.preventDefault();
-    console.log(email);
-    console.log(password);
+    try{
+      await logIn(email, password)
+      navigate("/")
+    }catch(err){
+      console.log(err);
+    }
   }
   return (
     <div className="w-full h-screen">
