@@ -4,6 +4,8 @@ import { createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, on
 
 
 import {auth, db } from '../services/firebase';
+
+import {doc, setDoc} from 'firebase/firestore';
  
 const AuthContext = createContext();
 
@@ -23,6 +25,9 @@ export function AuthContextProvider({children}){
 
 function signup (email, password){
     return createUserWithEmailAndPassword(auth,email, password)
+    setDoc(doc(db,'users', email), {
+        favShows: [],
+    })
 }
 
 
