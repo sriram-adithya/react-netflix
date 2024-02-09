@@ -2,7 +2,7 @@ import axios from 'axios';
 import React from 'react'
 import { useEffect } from 'react';
 import { useState } from 'react'
-import endPoints, { creatImageUrl } from '../services/movieServices';
+import endPoints, { createImageUrl } from '../services/movieServices';
 
 const Hero = () => {
 
@@ -39,7 +39,7 @@ const Hero = () => {
         <div className='w-full h-full'>
             <div className='absolute w-full h-[550px] lg:h-[850px] bg-gradient-to-r from-black'/>
                 <img className='w-full h-full object-cover object-top'
-                src={creatImageUrl(backdrop_path, "original")} 
+                src={createImageUrl(backdrop_path, "original")} 
                 alt={title} />
 
                 <div className="absolute w-full top-[10%] lg:top-[25%] p-4 md:p-8">

@@ -1,5 +1,5 @@
 import React from "react";
-import { creatImageUrl } from "../services/movieServices";
+import { createImageUrl } from "../services/movieServices";
 import { FaHeart, FaRegHeart } from "react-icons/fa";
 import { useState } from "react";
 import {arrayUnion, doc, updateDoc} from 'firebase/firestore'
@@ -32,7 +32,7 @@ const MovieItem = ({ movie }) => {
       {/* Img tag is for rendering 5 rows of images */}
       <img
         className="w-full h-40 object-cover object-top"
-        src={creatImageUrl(backdrop_path ?? poster_path, "w500")}
+        src={createImageUrl(backdrop_path ?? poster_path, "w500")}
         alt={title}
       />
 
